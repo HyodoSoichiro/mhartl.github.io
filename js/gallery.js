@@ -21,6 +21,11 @@ function activateGallery(){
 	let thumbnails = document.querySelectorAll("#gallery-thumbs > div > img");
 	let mainImage = document.querySelector("#gallery-photo img");
 
+	// Preload large images.
+	let newImageSrc  = thumbnail.dataset.largeVersion;
+	let largeVersion = new Image();
+	largeVersion.src = thumbnails.dataset.largeVersion;
+
 	thumbnails.forEach(function(boo){
 		boo.addEventListener("click", function(){
 			let newImageSrc = boo.dataset.largeVersion;
